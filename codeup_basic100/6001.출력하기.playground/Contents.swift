@@ -1,20 +1,26 @@
 import UIKit
 
 //6001
+//Hello
 print("Hello")
 
 //6002
+//Hello World
 print("Hello World")
 print("Hello","World")
 
 //6003
+//Hello
+//World
 print("Hello")
 print("World")
 
 //6004
+//'Hello'
 print("'Hello'")
 
 //6005
+//"Hello"
 print("\"Hello\"")
 
 //6006
