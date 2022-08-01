@@ -20,13 +20,32 @@ import Foundation
 //}
 
 //6026
-let a = readLine()
-let b = readLine()
+//let a = readLine()
+//let b = readLine()
+//
+//if let a = a, let b = b{
+//    if let num1 = Float(a), let num2 = Float(b) {
+//        let res = num1 + num2
+//        print(res)
+//    }
+//}
 
-if let a = a, let b = b{
-    if let num1 = Float(a), let num2 = Float(b) {
-        let res = num1 + num2
-        print(res)
+//6027
+//let a = readLine()
+//
+//if let a = a {
+//    if let num = Int(a) {
+//        let hex = String(num, radix: 16)
+//        print(hex)
+//    }
+//}
+
+//6028
+let a = readLine()
+
+if let a = a {
+    if let num = Int(a) {
+        let hex = String(num, radix: 16)
+        print(hex.uppercased())
     }
 }
-
