@@ -41,11 +41,51 @@ import Foundation
 //}
 
 //6028
+//let a = readLine()
+//
+//if let a = a {
+//    if let num = Int(a) {
+//        let hex = String(num, radix: 16, uppercase: true)
+//        print(hex) // print(hex.uppercased())
+//    }
+//}
+
+//6029
+//let a = readLine()
+//
+//if let a = a {
+//    let num = Int(a, radix: 16) //16진수
+//    if let num = num {
+//        let octal = String(num, radix: 8) //8진수 (10진수 외 String)
+//        print(octal)
+//    }
+//}
+
+//6030
+//let a = readLine()
+//
+//if let a = a {
+//    if let ascii = UnicodeScalar(a) {
+//        print(ascii.value)
+//    }
+//}
+
+//let a = readLine()
+//
+//if let a = a {
+//    if let ascii = Character(a).asciiValue {
+//        print(ascii)
+//    }
+//}
+
+//6031
+// a값을 Int로 안바꿔서 오류가 났었,
 let a = readLine()
 
 if let a = a {
     if let num = Int(a) {
-        let hex = String(num, radix: 16)
-        print(hex.uppercased())
+        if let unicode = UnicodeScalar(num) {
+            print(unicode)
+        }
     }
 }
