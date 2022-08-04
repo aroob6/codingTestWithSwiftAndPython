@@ -80,12 +80,21 @@ import Foundation
 
 //6031
 // a값을 Int로 안바꿔서 오류가 났었,
+//let a = readLine()
+//
+//if let a = a {
+//    if let num = Int(a) {
+//        if let unicode = UnicodeScalar(num) {
+//            print(unicode)
+//        }
+//    }
+//}
+
+//6032
 let a = readLine()
 
 if let a = a {
     if let num = Int(a) {
-        if let unicode = UnicodeScalar(num) {
-            print(unicode)
-        }
+        print(-num)
     }
 }
