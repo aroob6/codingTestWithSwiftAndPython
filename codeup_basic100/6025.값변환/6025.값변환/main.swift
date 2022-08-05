@@ -91,10 +91,22 @@ import Foundation
 //}
 
 //6032
+//let a = readLine()
+//
+//if let a = a {
+//    if let num = Int(a) {
+//        print(-num)
+//    }
+//}
+
+//6033
 let a = readLine()
 
 if let a = a {
-    if let num = Int(a) {
-        print(-num)
+    let chr = Character(a)
+    if let ascii = chr.asciiValue { //아스키 값
+        let res = UnicodeScalar(ascii + 1) 
+        print(String(res))
     }
+        
 }
