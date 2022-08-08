@@ -100,13 +100,24 @@ import Foundation
 //}
 
 //6033
+//let a = readLine()
+//
+//if let a = a {
+//    let chr = Character(a)
+//    if let ascii = chr.asciiValue { //아스키 값
+//        let res = UnicodeScalar(ascii + 1)
+//        print(String(res))
+//    }
+//}
+
+//6034
 let a = readLine()
 
 if let a = a {
-    let chr = Character(a)
-    if let ascii = chr.asciiValue { //아스키 값
-        let res = UnicodeScalar(ascii + 1) 
-        print(String(res))
+    let split = a.split(separator: " ")
+    
+    if let numA = Int(split[0]), let numB = Int(split[1]) {
+        let res = numA - numB
+        print(res)
     }
-        
 }
