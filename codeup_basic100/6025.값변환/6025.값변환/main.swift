@@ -111,13 +111,40 @@ import Foundation
 //}
 
 //6034
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        let res = numA - numB
+//        print(res)
+//    }
+//}
+
+//6035
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Float(split[0]), let numB = Float(split[1]) {
+//        let res = numA * numB
+//        print(res)
+//    }
+//}
+
+//6036
 let a = readLine()
 
 if let a = a {
     let split = a.split(separator: " ")
     
-    if let numA = Int(split[0]), let numB = Int(split[1]) {
-        let res = numA - numB
-        print(res)
+    let strA = split[0]
+    if let numB = Int(split[1]) {
+        for _ in 0 ..< numB {
+            print(strA, terminator: "")
+        }
+        print("")
     }
 }
