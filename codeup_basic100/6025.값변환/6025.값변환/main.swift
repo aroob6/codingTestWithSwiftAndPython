@@ -187,7 +187,7 @@ import Foundation
 //let a = readLine()
 //
 //if let a = a {
-//  let split = a.split(separator: ” “)
+//  let split = a.split(separator: " ")
 //  if let numA = Int(split[0]), let numB = Int(split[1]) {
 //    print(numA/numB)
 //  }
@@ -196,7 +196,7 @@ import Foundation
 //6041
 let a = readLine()
 if let a = a {
-  let split = a.split(separator: ” “)
+  let split = a.split(separator: " ")
   if let numA = Int(split[0]), let numB = Int(split[1]) {
     print(numA%numB)
   }
