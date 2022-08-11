@@ -162,7 +162,6 @@ import Foundation
 //    }
 //}
 
-
 //6038
 //let a = readLine()
 //if let a = a {
