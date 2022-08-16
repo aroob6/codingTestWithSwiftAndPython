@@ -211,12 +211,27 @@ import Foundation
 //}
 
 //6043
+//let a = readLine()
+//if let a = a {
+//    let split = a.split(separator: " ")
+//    if let floatA = Float(split[0]), let floatB = Float(split[1]) {
+//        let div = floatA / floatB
+//        let res = round(div * 1000) / 1000
+//        print(res)
+//    }
+//}
+
+//6044
 let a = readLine()
+
 if let a = a {
     let split = a.split(separator: " ")
-    if let floatA = Float(split[0]), let floatB = Float(split[1]) {
-        let div = floatA / floatB
-        let res = round(div * 1000) / 1000
-        print(res)
+    if let numA = Int(split[0]), let numB = Int(split[1]) {
+        print(numA + numB)
+        print(numA - numB)
+        print(numA * numB)
+        print(numA % numB)
+        let str = String(format: "%.2f", Float(numA) / Float(numB))
+        print(str)
     }
 }
