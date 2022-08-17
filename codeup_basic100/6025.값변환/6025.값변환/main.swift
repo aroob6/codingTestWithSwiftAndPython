@@ -222,16 +222,75 @@ import Foundation
 //}
 
 //6044
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        print(numA + numB)
+//        print(numA - numB)
+//        print(numA * numB)
+//        print(numA % numB)
+//        let str = String(format: "%.2f", Float(numA) / Float(numB))
+//        print(str)
+//    }
+//}
+
+//6045
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+//        let sum = numA + numB + numC
+//        let avg = sum / 3
+//        let str = String(format: "%.2f", Float(avg))
+//
+//        print("\(sum) \(str)")
+//    }
+//}
+
+//6046
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        let res = numA << 1 //왼쪽 시프트, 값에 2배
+//        print(res)
+//    }
+//}
+
+//6047
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        print(numA << numB) //numA << numB = numA * 2^numB 어렵다 어려워
+//    }
+//}
+
+//6048 - 6051
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        print(numA < numB) //6048
+//        print(numA == numB) //6049
+//        print(numA <= numB) //6050
+//        print(numA != numB) //6051
+//    }
+//}
+
+//6052
 let a = readLine()
 
 if let a = a {
-    let split = a.split(separator: " ")
-    if let numA = Int(split[0]), let numB = Int(split[1]) {
-        print(numA + numB)
-        print(numA - numB)
-        print(numA * numB)
-        print(numA % numB)
-        let str = String(format: "%.2f", Float(numA) / Float(numB))
-        print(str)
+    if let numA = Int(a) {
+        numA == 0 ? print("false") : print("true")
     }
 }
