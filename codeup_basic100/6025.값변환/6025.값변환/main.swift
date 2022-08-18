@@ -287,10 +287,47 @@ import Foundation
 //}
 
 //6052
+//func intToBool(num: Int) -> Bool {
+//    return num == 0 ? false : true
+//}
+//
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        print(intToBool(num: numA))
+//    }
+//}
+
+//6053
+//func intToBool(num: Int) -> Bool {
+//    return num != 0 ? false : true
+//}
+//
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        print(intToBool(num: numA))
+//    }
+//}
+
+//6054 - 6056
+func intToBool(num: Int) -> Bool {
+    return num == 0 ? false : true
+}
+
 let a = readLine()
 
 if let a = a {
-    if let numA = Int(a) {
-        numA == 0 ? print("false") : print("true")
+    let split = a.split(separator: " ")
+    if let numA = Int(split[0]), let numB = Int(split[1]) {
+        let boolA = intToBool(num: numA)
+        let boolB = intToBool(num: numB)
+        print(boolA && boolB) //6054 둘다 참일 경우 참
+        print(boolA || boolB) //6055 하나라도 참이면 참
+        print((boolA && !boolB) || (!boolA && boolB)) //6056 참/거짓이 서로 다를때에만 참
+        print((!boolA && !boolB) || (boolA && boolB)) //6057 참/거짓이 서로 같을때만 참
+        print(!(boolA || boolB)) //6058 둘 다 거짓일 경우만 참
     }
 }
