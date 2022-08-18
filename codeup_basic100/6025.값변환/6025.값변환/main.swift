@@ -312,7 +312,7 @@ import Foundation
 //    }
 //}
 
-//6054 - 6056
+//6054 - 6058
 func intToBool(num: Int) -> Bool {
     return num == 0 ? false : true
 }
