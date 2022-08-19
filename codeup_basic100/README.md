@@ -1,7 +1,7 @@
 # 코드업 기초 100제 with Swift
 |문제번호 </br> (6001 ~ 6050)|블로그|체크|문제번호 </br> (6051 ~ 6098)|블로그|체크|
 |:---:|:---:|:---:|:---:|:---:|:---:|
-|6001|https://aroob6.tistory.com/14|✔️|
+|6001|https://aroob6.tistory.com/14|✔️|6051|https://aroob6.tistory.com/20|✔️|
 |6002|https://aroob6.tistory.com/14|✔️|
 |6003|https://aroob6.tistory.com/14|✔️|
 |6004|https://aroob6.tistory.com/14|✔️|
@@ -51,4 +51,3 @@
 |6048|https://aroob6.tistory.com/20|✔️|
 |6049|https://aroob6.tistory.com/20|✔️|
 |6050|https://aroob6.tistory.com/20|✔️|
-|6051|https://aroob6.tistory.com/20|✔️|
