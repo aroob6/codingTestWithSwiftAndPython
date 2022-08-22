@@ -313,21 +313,63 @@ import Foundation
 //}
 
 //6054 - 6058
-func intToBool(num: Int) -> Bool {
-    return num == 0 ? false : true
-}
+//func intToBool(num: Int) -> Bool {
+//    return num == 0 ? false : true
+//}
+//
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        let boolA = intToBool(num: numA)
+//        let boolB = intToBool(num: numB)
+//        print(boolA && boolB) //6054 둘다 참일 경우 참
+//        print(boolA || boolB) //6055 하나라도 참이면 참
+//        print((boolA && !boolB) || (!boolA && boolB)) //6056 참/거짓이 서로 다를때에만 참
+//        print((!boolA && !boolB) || (boolA && boolB)) //6057 참/거짓이 서로 같을때만 참
+//        print(!(boolA || boolB)) //6058 둘 다 거짓일 경우만 참
+//    }
+//}
 
+//6059
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        print(~numA)
+//    }
+//}
+
+//6060 - 6062
+//let a = readLine()
+//if let a = a {
+//    let split = a.split(separator: " ")
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        print(numA & numB) //6060
+//        print(numA | numB) //6061
+//        print(numA ^ numB) //6062
+//    }
+//}
+
+//6063
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        print(numA >= numB ? numA : numB)
+//    }
+//}
+
+//6064
 let a = readLine()
 
 if let a = a {
     let split = a.split(separator: " ")
-    if let numA = Int(split[0]), let numB = Int(split[1]) {
-        let boolA = intToBool(num: numA)
-        let boolB = intToBool(num: numB)
-        print(boolA && boolB) //6054 둘다 참일 경우 참
-        print(boolA || boolB) //6055 하나라도 참이면 참
-        print((boolA && !boolB) || (!boolA && boolB)) //6056 참/거짓이 서로 다를때에만 참
-        print((!boolA && !boolB) || (boolA && boolB)) //6057 참/거짓이 서로 같을때만 참
-        print(!(boolA || boolB)) //6058 둘 다 거짓일 경우만 참
+
+    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+        print(numA <= numB ? (numA <= numC ? numA : numC) : (numB <= numC ? numB : numC))
     }
 }
