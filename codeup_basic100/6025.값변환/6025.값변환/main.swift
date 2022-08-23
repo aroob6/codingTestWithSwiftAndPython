@@ -364,12 +364,44 @@ import Foundation
 //}
 
 //6064
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+//        print(numA <= numB ? (numA <= numC ? numA : numC) : (numB <= numC ? numB : numC))
+//    }
+//}
+
+//6065
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+//        if numA % 2 == 0 {
+//            print(numA)
+//        }
+//        if numB % 2 == 0 {
+//            print(numB)
+//        }
+//        if numC % 2 == 0 {
+//            print(numC)
+//        }
+//    }
+//}
+
+//6066
 let a = readLine()
 
 if let a = a {
     let split = a.split(separator: " ")
-
+    
     if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
-        print(numA <= numB ? (numA <= numC ? numA : numC) : (numB <= numC ? numB : numC))
+        print(numA % 2 == 0 ? "even" : "odd")
+        print(numB % 2 == 0 ? "even" : "odd")
+        print(numC % 2 == 0 ? "even" : "odd")
     }
 }
