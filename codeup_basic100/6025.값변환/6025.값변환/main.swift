@@ -394,14 +394,91 @@ import Foundation
 //}
 
 //6066
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+//        print(numA % 2 == 0 ? "even" : "odd")
+//        print(numB % 2 == 0 ? "even" : "odd")
+//        print(numC % 2 == 0 ? "even" : "odd")
+//    }
+//}
+
+//6067
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        if numA < 0 && numA % 2 == 0 {
+//            print("A")
+//        }
+//        else if numA < 0 && numA % 2 != 0 {
+//            print("B")
+//        }
+//        else if numA > 0 && numA % 2 == 0 {
+//            print("C")
+//        }
+//        else {
+//            print("D")
+//        }
+//    }
+//}
+
+//6068
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        if numA >= 90 {
+//            print("A")
+//        }
+//        else if numA >= 70 {
+//            print("B")
+//        }
+//        else if numA >= 40 {
+//            print("C")
+//        }
+//        else {
+//            print("D")
+//        }
+//    }
+//}
+
+//6069
+//let a = readLine()
+//
+//if let a = a {
+//    switch a {
+//    case "A":
+//        print("Best")
+//    case "B":
+//        print("good")
+//    case "C":
+//        print("run")
+//    case "D":
+//        print("slowly")
+//    default:
+//        print("what?")
+//    }
+//}
+
+
+//6070
 let a = readLine()
 
 if let a = a {
-    let split = a.split(separator: " ")
-    
-    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
-        print(numA % 2 == 0 ? "even" : "odd")
-        print(numB % 2 == 0 ? "even" : "odd")
-        print(numC % 2 == 0 ? "even" : "odd")
+    if let month = Int(a) {
+        switch month / 3 {
+        case 1:
+            print("spring")
+        case 2:
+            print("summer")
+        case 3:
+            print("fall")
+        default:
+            print("winter")
+        }
     }
 }
