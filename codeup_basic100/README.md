@@ -2,13 +2,13 @@
 |문제번호 </br> (6001 ~ 6050)|블로그|체크|문제번호 </br> (6051 ~ 6098)|블로그|체크|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |6001|https://aroob6.tistory.com/14|✔️|6051|https://aroob6.tistory.com/20|✔️|
-|6002|https://aroob6.tistory.com/14|✔️|
-|6003|https://aroob6.tistory.com/14|✔️|
-|6004|https://aroob6.tistory.com/14|✔️|
-|6005|https://aroob6.tistory.com/14|✔️|
-|6006|https://aroob6.tistory.com/14|✔️|
-|6007|https://aroob6.tistory.com/14|✔️|
-|6008|https://aroob6.tistory.com/14|✔️|
+|6002|https://aroob6.tistory.com/14|✔️|6052|https://aroob6.tistory.com/21|✔️|
+|6003|https://aroob6.tistory.com/14|✔️|6053|https://aroob6.tistory.com/21|✔️|
+|6004|https://aroob6.tistory.com/14|✔️|6054|https://aroob6.tistory.com/21|✔️|
+|6005|https://aroob6.tistory.com/14|✔️|6055|https://aroob6.tistory.com/21|✔️|
+|6006|https://aroob6.tistory.com/14|✔️|6056|https://aroob6.tistory.com/21|✔️|
+|6007|https://aroob6.tistory.com/14|✔️|6057|https://aroob6.tistory.com/21|✔️|
+|6008|https://aroob6.tistory.com/14|✔️|6058|https://aroob6.tistory.com/21|✔️|
 |6009|https://aroob6.tistory.com/15|✔️|
 |6010|https://aroob6.tistory.com/15|✔️|
 |6011|https://aroob6.tistory.com/15|✔️|
