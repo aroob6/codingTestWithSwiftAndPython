@@ -466,19 +466,35 @@ import Foundation
 
 
 //6070
-let a = readLine()
+//let a = readLine()
+//
+//if let a = a {
+//    if let month = Int(a) {
+//        switch month / 3 {
+//        case 1:
+//            print("spring")
+//        case 2:
+//            print("summer")
+//        case 3:
+//            print("fall")
+//        default:
+//            print("winter")
+//        }
+//    }
+//}
 
-if let a = a {
-    if let month = Int(a) {
-        switch month / 3 {
-        case 1:
-            print("spring")
-        case 2:
-            print("summer")
-        case 3:
-            print("fall")
-        default:
-            print("winter")
-        }
+//6071
+var n = 1
+
+while n != 0 {
+    let a = readLine()
+    guard let a = a else { break }
+    guard let numA = Int(a) else { break }
+    
+    if numA != 0 {
+        print(numA)
+    }
+    else {
+        n = 0
     }
 }
