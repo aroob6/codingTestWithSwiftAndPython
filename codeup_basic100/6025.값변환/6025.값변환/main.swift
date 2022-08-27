@@ -484,17 +484,29 @@ import Foundation
 //}
 
 //6071
-var n = 1
+//var n = 1
+//
+//while n != 0 {
+//    let a = readLine()
+//    guard let a = a else { break }
+//    guard let numA = Int(a) else { break }
+//
+//    if numA != 0 {
+//        print(numA)
+//    }
+//    else {
+//        n = 0
+//    }
+//}
 
-while n != 0 {
-    let a = readLine()
-    guard let a = a else { break }
-    guard let numA = Int(a) else { break }
-    
-    if numA != 0 {
-        print(numA)
-    }
-    else {
-        n = 0
+//6072
+let a = readLine()
+
+if let a = a {
+    if var numA = Int(a) {
+        while numA != 0 {
+            print(numA)
+            numA = numA - 1
+        }
     }
 }
