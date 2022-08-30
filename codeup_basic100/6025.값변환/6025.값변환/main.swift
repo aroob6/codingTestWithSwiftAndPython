@@ -541,12 +541,66 @@ import Foundation
 //}
 
 //6075 - 6076
-let a = readLine()
+//let a = readLine()
+//
+//if let a  = a {
+//    if let numA = Int(a) {
+//        for i in 0 ... numA {
+//            print(i)
+//        }
+//    }
+//}
 
-if let a  = a {
-    if let numA = Int(a) {
-        for i in 0 ... numA {
-            print(i)
-        }
-    }
-}
+//6077
+//let a = readLine()
+//
+//if let a = a {
+//    if let numA = Int(a) {
+//        var sum = 0
+//        for i in 0 ... numA {
+//            if i % 2 == 0 {
+//                sum += i
+//            }
+//        }
+//        print(sum)
+//    }
+//}
+
+//6078
+//var check = true
+//while check {
+//    let a = readLine()
+//    guard let a = a else { break }
+//
+//    a == "q" ? check = false : print(a)
+//}
+
+//6079
+//let a = readLine()
+//var check = true
+//
+//if let a = a, let numA = Int(a) { // if-let 구문을 계속 두번 쓰고 있었네,,,,
+//    var sum = 0
+//    var i = 0
+//
+//    while sum < numA {
+//        i += 1
+//        sum += i
+//    }
+//    print(i)
+//}
+
+//6080
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//    
+//    if let numA = Int(split[0]), let numB = Int(split[1]) {
+//        for i in 1 ... numA {
+//            for j in 1 ... numB {
+//                print("\(i) \(j)")
+//            }
+//        }
+//    }
+//}
