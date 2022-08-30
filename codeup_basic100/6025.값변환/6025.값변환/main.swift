@@ -524,18 +524,29 @@ import Foundation
 //}
 
 //6074
-let a = readLine() // input
-let asciiA = Character("a").asciiValue! // a 아스키 값
-var numA = Int(asciiA) // Int로 변환
+//let a = readLine() // input
+//let asciiA = Character("a").asciiValue! // a 아스키 값
+//var numA = Int(asciiA) // Int로 변환
+//
+//if let a = a {
+//    let ascii = Character(a).asciiValue! //input 아스키 값
+//    let num = Int(ascii) // Int로 변환
+//
+//    while numA <= num {
+//        let char = Character(UnicodeScalar(numA)!)
+//        print(char, terminator: " ")
+//        numA += 1
+//    }
+//    print("")
+//}
 
-if let a = a {
-    let ascii = Character(a).asciiValue! //input 아스키 값
-    let num = Int(ascii) // Int로 변환
-    
-    while numA <= num {
-        let char = Character(UnicodeScalar(numA)!)
-        print(char, terminator: " ")
-        numA += 1
+//6075 - 6076
+let a = readLine()
+
+if let a  = a {
+    if let numA = Int(a) {
+        for i in 0 ... numA {
+            print(i)
+        }
     }
-    print("")
 }
