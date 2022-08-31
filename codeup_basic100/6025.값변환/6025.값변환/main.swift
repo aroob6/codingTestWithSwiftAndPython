@@ -595,7 +595,7 @@ import Foundation
 //
 //if let a = a {
 //    let split = a.split(separator: " ")
-//    
+//
 //    if let numA = Int(split[0]), let numB = Int(split[1]) {
 //        for i in 1 ... numA {
 //            for j in 1 ... numB {
@@ -604,3 +604,54 @@ import Foundation
 //        }
 //    }
 //}
+
+//6081
+//func isDecimal(_ hex: String) -> Int { // 16진수(문자)를 10진수
+//    return Int(hex, radix: 16) ?? 0
+//}
+//
+//func isHex(_ dec: Int) -> String { //10진수를 16진수로
+//    return String(dec, radix: 16).uppercased()
+//}
+//
+//let a = readLine()
+//
+//if let a = a {
+//    for i in 1 ... 15 {
+//        let res = isDecimal(a) * i
+//        print("\(a) * \(i) = \(isHex(res))")
+////        print(String.init(format: "%X * %X = %X", isDecimal(a), i, res))
+////        format으로 10진수를 바로 16진수로 바꿈
+//    }
+//}
+
+//6082
+//1~29 까지 입력
+//let a = readLine()
+//
+//if let a = a, let numA = Int(a) {
+//    for i in 1 ... numA {
+//        print(i % 3 == 0 ? "X" : i , terminator: " ")
+//    }
+//    print("")
+//}
+
+//6083
+let a = readLine()
+
+if let a = a {
+    let split = a.split(separator: " ")
+    
+    if let red = Int(split[0]), let green = Int(split[0]), let blue = Int(split[0]) {
+        var cnt = 0
+        for r in 0 ..< red {
+            for g in 0 ..< green {
+                for b in 0 ..< blue {
+                    cnt += 1
+                    print(r, g, b, separator: " ")
+                }
+            }
+        }
+        print(cnt)
+    }
+}
