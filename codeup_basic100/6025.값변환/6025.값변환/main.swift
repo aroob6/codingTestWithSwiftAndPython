@@ -637,21 +637,41 @@ import Foundation
 //}
 
 //6083
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let red = Int(split[0]), let green = Int(split[0]), let blue = Int(split[0]) {
+//        var cnt = 0
+//        for r in 0 ..< red {
+//            for g in 0 ..< green {
+//                for b in 0 ..< blue {
+//                    cnt += 1
+//                    print(r, g, b, separator: " ")
+//                }
+//            }
+//        }
+//        print(cnt)
+//    }
+//}
+
+//6084
 let a = readLine()
 
 if let a = a {
     let split = a.split(separator: " ")
     
-    if let red = Int(split[0]), let green = Int(split[0]), let blue = Int(split[0]) {
-        var cnt = 0
-        for r in 0 ..< red {
-            for g in 0 ..< green {
-                for b in 0 ..< blue {
-                    cnt += 1
-                    print(r, g, b, separator: " ")
-                }
-            }
-        }
-        print(cnt)
+    // s = 1초동안 마이크로 소리 강약을 체크하는 횟수
+    // b = 한 번 체크한 값을 저장할 때 사용하는 비트수
+    // c = 좌우 등 소리를 저장할 트랙 개수인 채널 개수 ( 모노 1개, 스테레오 2개..)
+    // s = 녹음할 시간(초)
+    
+    if let h = Int(split[0]), let b = Int(split[1]), let c = Int(split[2]), let s = Int(split[3]) {
+        let res = (h * b * c * s)
+        let resMb = Double(res) / 8 / 1024 / 1024
+        print(String(format: "%.1f MB", resMb))
+        
     }
 }
+
