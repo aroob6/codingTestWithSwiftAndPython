@@ -657,21 +657,37 @@ import Foundation
 //}
 
 //6084
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    // s = 1초동안 마이크로 소리 강약을 체크하는 횟수
+//    // b = 한 번 체크한 값을 저장할 때 사용하는 비트수
+//    // c = 좌우 등 소리를 저장할 트랙 개수인 채널 개수 ( 모노 1개, 스테레오 2개..)
+//    // s = 녹음할 시간(초)
+//
+//    if let h = Int(split[0]), let b = Int(split[1]), let c = Int(split[2]), let s = Int(split[3]) {
+//        let res = (h * b * c * s)
+//        let resMb = Double(res) / 8 / 1024 / 1024
+//        print(String(format: "%.1f MB", resMb))
+//    }
+//}
+
+
+//6085
 let a = readLine()
 
 if let a = a {
     let split = a.split(separator: " ")
     
-    // s = 1초동안 마이크로 소리 강약을 체크하는 횟수
-    // b = 한 번 체크한 값을 저장할 때 사용하는 비트수
-    // c = 좌우 등 소리를 저장할 트랙 개수인 채널 개수 ( 모노 1개, 스테레오 2개..)
-    // s = 녹음할 시간(초)
+    // w = 이미지의 가로 해상도
+    // h = 세로 해상도
+    // b = 한 픽셀을 저장하기 위한 비트
     
-    if let h = Int(split[0]), let b = Int(split[1]), let c = Int(split[2]), let s = Int(split[3]) {
-        let res = (h * b * c * s)
+    if let w = Int(split[0]), let h = Int(split[1]), let b = Int(split[2]) {
+        let res = w * h * b
         let resMb = Double(res) / 8 / 1024 / 1024
-        print(String(format: "%.1f MB", resMb))
-        
+        print(String(format: "%.2f MB", resMb))
     }
 }
-
