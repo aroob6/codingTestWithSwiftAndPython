@@ -676,18 +676,49 @@ import Foundation
 
 
 //6085
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    // w = 이미지의 가로 해상도
+//    // h = 세로 해상도
+//    // b = 한 픽셀을 저장하기 위한 비트
+//
+//    if let w = Int(split[0]), let h = Int(split[1]), let b = Int(split[2]) {
+//        let res = w * h * b
+//        let resMb = Double(res) / 8 / 1024 / 1024
+//        print(String(format: "%.2f MB", resMb))
+//    }
+//}
+
+//6086
+//let a = readLine()
+//
+//if let a = a, let numA = Int(a) {
+//    var cnt = 1
+//    var res = 0
+//
+//    while true {
+//        res += cnt
+//        cnt += 1
+//
+//        if res >= numA { break }
+//    }
+//    print(res)
+//}
+
+//6087
 let a = readLine()
 
-if let a = a {
-    let split = a.split(separator: " ")
-    
-    // w = 이미지의 가로 해상도
-    // h = 세로 해상도
-    // b = 한 픽셀을 저장하기 위한 비트
-    
-    if let w = Int(split[0]), let h = Int(split[1]), let b = Int(split[2]) {
-        let res = w * h * b
-        let resMb = Double(res) / 8 / 1024 / 1024
-        print(String(format: "%.2f MB", resMb))
+if let a = a, let numA = Int(a) {
+    for i in 1 ... numA {
+        if i % 3 == 0 {
+            continue
+        }
+        else {
+            print(i , terminator: " ")
+        }
     }
+    print("")
 }
