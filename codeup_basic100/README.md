@@ -27,12 +27,12 @@
 |6024|https://aroob6.tistory.com/15|✔️|6074|https://aroob6.tistory.com/24|✔️|
 |6025|https://aroob6.tistory.com/16|✔️|6075|https://aroob6.tistory.com/24|✔️|
 |6026|https://aroob6.tistory.com/16|✔️|6076|https://aroob6.tistory.com/24|✔️|
-|6027|https://aroob6.tistory.com/16|✔️|
-|6028|https://aroob6.tistory.com/16|✔️|
-|6029|https://aroob6.tistory.com/17|✔️|
-|6030|https://aroob6.tistory.com/17|✔️|
-|6031|https://aroob6.tistory.com/17|✔️|
-|6032|https://aroob6.tistory.com/18|✔️|
+|6027|https://aroob6.tistory.com/16|✔️|6077|https://aroob6.tistory.com/25|✔️|
+|6028|https://aroob6.tistory.com/16|✔️|6078|https://aroob6.tistory.com/25|✔️|
+|6029|https://aroob6.tistory.com/17|✔️|6079|https://aroob6.tistory.com/25|✔️|
+|6030|https://aroob6.tistory.com/17|✔️|6080|https://aroob6.tistory.com/25|✔️|
+|6031|https://aroob6.tistory.com/17|✔️|6081|https://aroob6.tistory.com/25|✔️|
+|6032|https://aroob6.tistory.com/18|✔️|6082 |https://aroob6.tistory.com/25|✔️|
 |6033|https://aroob6.tistory.com/18|✔️|
 |6034|https://aroob6.tistory.com/18|✔️|
 |6035|https://aroob6.tistory.com/18|✔️|
