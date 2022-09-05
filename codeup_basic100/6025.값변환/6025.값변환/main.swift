@@ -709,16 +709,68 @@ import Foundation
 //}
 
 //6087
+//let a = readLine()
+//
+//if let a = a, let numA = Int(a) {
+//    for i in 1 ... numA {
+//        if i % 3 == 0 {
+//            continue
+//        }
+//        else {
+//            print(i , terminator: " ")
+//        }
+//    }
+//    print("")
+//}
+
+//6088
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    // a = 시작 값
+//    // d = 등차의 값
+//    // n = 몇 번째 수
+//    if var a = Int(split[0]), let d = Int(split[1]), let n = Int(split[2]) {
+//        for _ in 1 ..< n {
+//            a += d
+//        }
+//        print(a)
+//    }
+//}
+
+//6089
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    // a = 시작 값
+//    // d = 등비의 값
+//    // n = 몇 번째 수
+//    if var a = Int(split[0]), let r = Int(split[1]), let n = Int(split[2]) {
+//        for _ in 1 ..< n {
+//            a *= r
+//        }
+//        print(a)
+//    }
+//}
+
+//6090
 let a = readLine()
 
-if let a = a, let numA = Int(a) {
-    for i in 1 ... numA {
-        if i % 3 == 0 {
-            continue
+if let a = a {
+    let split = a.split(separator: " ")
+    
+    // a = 시작 값
+    // m = 곱할 값
+    // d = 더할 값
+    // n = 몇 번째 수
+    if var a = Int(split[0]), let m = Int(split[1]), let d = Int(split[2]), let n = Int(split[3]) {
+        for _ in 1 ..< n {
+            a = a * m + d
         }
-        else {
-            print(i , terminator: " ")
-        }
+        print(a)
     }
-    print("")
 }
