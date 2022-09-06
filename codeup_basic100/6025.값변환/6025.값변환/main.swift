@@ -758,19 +758,63 @@ import Foundation
 //}
 
 //6090
-let a = readLine()
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    // a = 시작 값
+//    // m = 곱할 값
+//    // d = 더할 값
+//    // n = 몇 번째 수
+//    if var a = Int(split[0]), let m = Int(split[1]), let d = Int(split[2]), let n = Int(split[3]) {
+//        for _ in 1 ..< n {
+//            a = a * m + d
+//        }
+//        print(a)
+//    }
+//}
 
-if let a = a {
-    let split = a.split(separator: " ")
+//6091
+//let a = readLine()
+//
+//if let a = a {
+//    let split = a.split(separator: " ")
+//
+//    if let numA = Int(split[0]), let numB = Int(split[1]), let numC = Int(split[2]) {
+//        var day = 1
+//        while day % numA != 0 || day % numB != 0 || day % numC != 0 {
+//            day += 1
+//        }
+//        print(day)
+//    }
+//}
+
+//6092
+
+let a = readLine() //10
+let call = readLine() // 1 3 2 2 5 6 7 4 5 9
+
+if let a = a, let call = call, let cnt = Int(a) {
+    let split = call.split(separator: " ")
+    var callNum: [Int] = []
+    var callCnt: [Int] = []
     
-    // a = 시작 값
-    // m = 곱할 값
-    // d = 더할 값
-    // n = 몇 번째 수
-    if var a = Int(split[0]), let m = Int(split[1]), let d = Int(split[2]), let n = Int(split[3]) {
-        for _ in 1 ..< n {
-            a = a * m + d
-        }
-        print(a)
+    //부른 값 정수로 바꾸기
+    for i in 0 ..< cnt {
+        callNum.append(Int(split[i]) ?? 0)
     }
+    //23개 배열 만들기
+    for _ in 0 ..< 24 {
+        callCnt.append(0)
+    }
+    //부를때마다 카운트 증가시키기
+    for i in 0 ..< cnt {
+        callCnt[callNum[i] - 1] += 1
+    }
+    // 출력하기
+    for i in 0 ..< 24 {
+        print(callCnt[i], terminator: " ")
+    }
+    print("")
 }
