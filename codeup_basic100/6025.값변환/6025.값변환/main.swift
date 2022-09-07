@@ -791,30 +791,42 @@ import Foundation
 //}
 
 //6092
+//let a = readLine() //10
+//let call = readLine() // 1 3 2 2 5 6 7 4 5 9
+//
+//if let a = a, let call = call, let cnt = Int(a) {
+//    let split = call.split(separator: " ")
+//    var callNum: [Int] = []
+//    var callCnt: [Int] = []
+//
+//    //부른 값 정수로 바꾸기
+//    for i in 0 ..< cnt {
+//        callNum.append(Int(split[i]) ?? 0)
+//    }
+//    //23개 배열 만들기
+//    for _ in 0 ..< 24 {
+//        callCnt.append(0)
+//    }
+//    //부를때마다 카운트 증가시키기
+//    for i in 0 ..< cnt {
+//        callCnt[callNum[i] - 1] += 1
+//    }
+//    // 출력하기
+//    for i in 0 ..< 24 {
+//        print(callCnt[i], terminator: " ")
+//    }
+//    print("")
+//}
 
-let a = readLine() //10
-let call = readLine() // 1 3 2 2 5 6 7 4 5 9
+//6093
+let a = readLine()
+let call = readLine()
 
-if let a = a, let call = call, let cnt = Int(a) {
+if let a = a, let call = call, let numA = Int(a) {
     let split = call.split(separator: " ")
-    var callNum: [Int] = []
-    var callCnt: [Int] = []
     
-    //부른 값 정수로 바꾸기
-    for i in 0 ..< cnt {
-        callNum.append(Int(split[i]) ?? 0)
-    }
-    //23개 배열 만들기
-    for _ in 0 ..< 24 {
-        callCnt.append(0)
-    }
-    //부를때마다 카운트 증가시키기
-    for i in 0 ..< cnt {
-        callCnt[callNum[i] - 1] += 1
-    }
-    // 출력하기
-    for i in 0 ..< 24 {
-        print(callCnt[i], terminator: " ")
+    for i in split.reversed() {
+        print(i, terminator: " ")
     }
     print("")
 }
