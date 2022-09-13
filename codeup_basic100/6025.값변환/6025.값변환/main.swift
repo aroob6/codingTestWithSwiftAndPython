@@ -832,16 +832,84 @@ import Foundation
 //}
 
 //6094
-let a = readLine()
-let call = readLine()
+//let a = readLine()
+//let call = readLine()
+//
+//if let call = call {
+//    let split = call.split(separator: " ")
+//    var num: [Int] = []
+//
+//    for i in 0 ..< split.count {
+//        num.append(Int(split[i]) ?? 0)
+//    }
+//
+//    print(num.min()!)
+//}
 
-if let call = call {
-    let split = call.split(separator: " ")
-    var num: [Int] = []
-    
-    for i in 0 ..< split.count {
-        num.append(Int(split[i]) ?? 0)
+//6095
+//let num = Int(readLine()!)!
+//var board = [[Int]]()
+//
+//for i in 0 ..< 20 {
+//    board.append([])
+//    for _ in 0 ..< 20 {
+//        board[i].append(0)
+//    }
+//}
+//
+//for _ in 0 ..< num {
+//    let input = readLine()!.split(separator: " ")
+//    let tuple = (Int(input[0])!, Int(input[1])!)
+//
+//    board[tuple.0 - 1][tuple.1 - 1] = 1
+//}
+//
+//board.map { a in
+//    print(a)
+//}
+
+//6096
+let size = readLine()!.split(separator: " ")
+let num = Int(readLine()!)!
+var board = [[Int]]()
+
+for i in 0 ..< Int(size[0])! {
+    board.append([])
+    for _ in 0 ..< Int(size[1])! {
+        board[i].append(0)
     }
+}
+
+for _ in 0 ..< num {
+    let input = readLine()!.split(separator: " ")
     
-    print(num.min()!)
+    // 막대의 길이(l), 방향(d), 좌표(x, y)
+    // d = 0이면 가로, d = 1이면 세로
+    let l = Int(input[0])!
+    let d = Int(input[1])!
+    let x = Int(input[2])!
+    let y = Int(input[3])!
+    
+    var hapX = 0
+    var hapY = 0
+    
+    if d == 0 { // 가로
+        hapY =  y + (l - 1)
+        
+        for i in (y - 1) ..< hapY {
+            board[x - 1][i] = 1
+        }
+    }
+    else {
+        hapX = x + (l - 1)
+        
+        for i in (x - 1) ..< hapX {
+            board[i][y - 1] = 1
+        }
+    }
+
+}
+
+board.map { a in
+    print(a)
 }
