@@ -819,14 +819,29 @@ import Foundation
 //}
 
 //6093
+//let a = readLine()
+//let call = readLine()
+//
+//if let call = call {
+//    let split = call.split(separator: " ")
+//
+//    for i in split.reversed() {
+//        print(i, terminator: " ")
+//    }
+//    print("")
+//}
+
+//6094
 let a = readLine()
 let call = readLine()
 
-if let a = a, let call = call, let numA = Int(a) {
+if let call = call {
     let split = call.split(separator: " ")
+    var num: [Int] = []
     
-    for i in split.reversed() {
-        print(i, terminator: " ")
+    for i in 0 ..< split.count {
+        num.append(Int(split[i]) ?? 0)
     }
-    print("")
+    
+    print(num.min()!)
 }
