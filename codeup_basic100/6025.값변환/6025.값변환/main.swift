@@ -890,23 +890,33 @@ for _ in 0 ..< num {
     let x = Int(input[2])!
     let y = Int(input[3])!
     
-    var hapX = 0
-    var hapY = 0
+//    var hapX = 0
+//    var hapY = 0
     
-    if d == 0 { // 가로
-        hapY =  y + (l - 1)
-        
-        for i in (y - 1) ..< hapY {
-            board[x - 1][i] = 1
+    for i in 0 ..< l {
+        if d == 0 {
+            board[x - 1][y+i - 1] = 1
+        }
+        else {
+            board[x+i - 1][y - 1] = 1
         }
     }
-    else {
-        hapX = x + (l - 1)
+    
+//    if d == 0 { // 가로
+//        hapY =  y + (l - 1)
+//
+//        for i in (y - 1) ..< hapY {
+//            board[x - 1][i] = 1
+//        }
         
-        for i in (x - 1) ..< hapX {
-            board[i][y - 1] = 1
-        }
-    }
+//    }
+//    else {
+//        hapX = x + (l - 1)
+//
+//        for i in (x - 1) ..< hapX {
+//            board[i][y - 1] = 1
+//        }
+//    }
 
 }
 
