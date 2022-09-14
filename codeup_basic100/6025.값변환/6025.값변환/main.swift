@@ -869,57 +869,86 @@ import Foundation
 //}
 
 //6096
-let size = readLine()!.split(separator: " ")
-let num = Int(readLine()!)!
-var board = [[Int]]()
-
-for i in 0 ..< Int(size[0])! {
-    board.append([])
-    for _ in 0 ..< Int(size[1])! {
-        board[i].append(0)
-    }
-}
-
-for _ in 0 ..< num {
-    let input = readLine()!.split(separator: " ")
-    
-    // 막대의 길이(l), 방향(d), 좌표(x, y)
-    // d = 0이면 가로, d = 1이면 세로
-    let l = Int(input[0])!
-    let d = Int(input[1])!
-    let x = Int(input[2])!
-    let y = Int(input[3])!
-    
-//    var hapX = 0
-//    var hapY = 0
-    
-    for i in 0 ..< l {
-        if d == 0 {
-            board[x - 1][y+i - 1] = 1
-        }
-        else {
-            board[x+i - 1][y - 1] = 1
-        }
-    }
-    
-//    if d == 0 { // 가로
-//        hapY =  y + (l - 1)
+//var board = [[Int]]()
+//for _ in 0 ..< 19 {
+//    board.append([])
+//}
 //
-//        for i in (y - 1) ..< hapY {
-//            board[x - 1][i] = 1
-//        }
-        
+//for i in 0 ..< 19 {
+//    let a = readLine()!.split(separator: " ")
+//    for j in 0 ..< 19 {
+//        board[i].append(Int(a[j])!)
 //    }
-//    else {
-//        hapX = x + (l - 1)
+//}
 //
-//        for i in (x - 1) ..< hapX {
-//            board[i][y - 1] = 1
+//let num = Int(readLine()!)!
+//
+//for _ in 0 ..< num {
+//    let split = readLine()!.split(separator: " ")
+//    let tuple = (Int(split[0])!, Int(split[1])!)
+//    
+//    for j in 0 ..< 19 {
+//        board[j][tuple.1 - 1] = board[j][tuple.1 - 1] == 0 ? 1 : 0
+//        board[tuple.0 - 1][j] = board[tuple.0 - 1][j] == 0 ? 1 : 0
+//    }
+//}
+//
+//board.map { a in
+//    print(a)
+//}
+
+//6097
+//let size = readLine()!.split(separator: " ")
+//let num = Int(readLine()!)!
+//var board = [[Int]]()
+//
+//for i in 0 ..< Int(size[0])! {
+//    board.append([])
+//    for _ in 0 ..< Int(size[1])! {
+//        board[i].append(0)
+//    }
+//}
+//
+//for _ in 0 ..< num {
+//    let input = readLine()!.split(separator: " ")
+//
+//    // 막대의 길이(l), 방향(d), 좌표(x, y)
+//    // d = 0이면 가로, d = 1이면 세로
+//    let l = Int(input[0])!
+//    let d = Int(input[1])!
+//    let x = Int(input[2])!
+//    let y = Int(input[3])!
+//
+////    var hapX = 0
+////    var hapY = 0
+//
+//    for i in 0 ..< l {
+//        if d == 0 {
+//            board[x - 1][y+i - 1] = 1
+//        }
+//        else {
+//            board[x+i - 1][y - 1] = 1
 //        }
 //    }
-
-}
-
-board.map { a in
-    print(a)
-}
+//
+////    if d == 0 { // 가로
+////        hapY =  y + (l - 1)
+////
+////        for i in (y - 1) ..< hapY {
+////            board[x - 1][i] = 1
+////        }
+//
+////    }
+////    else {
+////        hapX = x + (l - 1)
+////
+////        for i in (x - 1) ..< hapX {
+////            board[i][y - 1] = 1
+////        }
+////    }
+//
+//}
+//
+//board.map { a in
+//    print(a)
+//}
