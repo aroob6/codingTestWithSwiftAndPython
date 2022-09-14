@@ -886,7 +886,7 @@ import Foundation
 //for _ in 0 ..< num {
 //    let split = readLine()!.split(separator: " ")
 //    let tuple = (Int(split[0])!, Int(split[1])!)
-//    
+//
 //    for j in 0 ..< 19 {
 //        board[j][tuple.1 - 1] = board[j][tuple.1 - 1] == 0 ? 1 : 0
 //        board[tuple.0 - 1][j] = board[tuple.0 - 1][j] == 0 ? 1 : 0
@@ -952,3 +952,67 @@ import Foundation
 //board.map { a in
 //    print(a)
 //}
+
+//6098!!!
+// 아래, 오른쪽으로만 이동
+// 갈수 있는 곳 0, 벽 또는 장애물 1, 먹이 2
+// 시작 (2,2)
+// 단, 맨 아래의 가장 오른쪽에 도착한 경우, 더 이상 움직일 수 없는 경우, 먹이를 찾은 경우에는 더이상 이동하지 않고 그 곳에 머무른다고 가정
+
+var board = [[Int]]()
+var x = 2 - 1
+var y = 2 - 1
+
+for i in 0 ..< 10 {
+    let a = readLine()!.split(separator: " ")
+    board.append([])
+    
+    for j in 0 ..< 10 {
+        board[i].append(Int(a[j])!)
+    }
+}
+
+//while true {
+//    if board[x][y] == 0 {
+//        board[x][y] = 9
+//    }
+//    else if board[x][y] == 2 {
+//        board[x][y] = 9
+//        break
+//    }
+//
+//    if (board[x][y+1] == 1 && board[x+1][y] == 1) || ( x==9 && y==9 ) {
+//        break
+//    }
+//
+//    if board[x][y+1] != 1 {
+//        y += 1
+//    }
+//    else if board[x+1][y] != 1 {
+//        x += 1
+//    }
+//}
+
+while true {
+    if board[x][y] == 0 {
+        board[x][y] = 9
+    }
+    else if board[x][y] == 2 {
+        board[x][y] = 9
+        break
+    }
+    
+    if (board[x][y+1] == 1 && board[x+1][y] == 1) || (x == 9 && y == 9) {
+        break
+    }
+    
+    if board[x][y+1] != 1 {
+        y += 1
+    }
+    else if board[x+1][y] != 1 {
+        x += 1
+    }
+}
+board.map { a in
+    print(a)
+}
