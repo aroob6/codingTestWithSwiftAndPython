@@ -102,28 +102,38 @@ import Foundation
 //}
 
 //문자열 내 p와 y의 개수
-func solution(_ s:String) -> Bool
-{
-    var ans:Bool = false
-    var cntP = 0
-    var cntY = 0
-    
-    _ = s.lowercased().map{
-        if  String($0) == "p" {
-            cntP += 1
-        }
-        if String($0) == "y" {
-            cntY += 1
-        }
+//func solution(_ s:String) -> Bool
+//{
+//    var ans:Bool = false
+//    var cntP = 0
+//    var cntY = 0
+//
+//    _ = s.lowercased().map{
+//        if  String($0) == "p" {
+//            cntP += 1
+//        }
+//        if String($0) == "y" {
+//            cntY += 1
+//        }
+//    }
+//
+//    ans = cntP == cntY ? true : false
+//
+//    return ans
+//}
+//let a = readLine()!
+//print(solution(a))
+
+//하샤드 수
+func solution(_ x:Int) -> Bool {
+    var hap = 0
+    _ = String(x).map {
+        hap += Int(String($0))!
     }
     
-    ans = cntP == cntY ? true : false
-
-    return ans
+    return x % hap == 0 ? true : false
 }
-let a = readLine()!
-print(solution(a))
 
-//let a = Int(readLine()!)!
-//print(solution(Int64(a)))
+let a = Int(readLine()!)!
+print(solution(Int(a)))
 
