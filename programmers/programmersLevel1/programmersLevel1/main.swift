@@ -125,15 +125,33 @@ import Foundation
 //print(solution(a))
 
 //하샤드 수
-func solution(_ x:Int) -> Bool {
-    var hap = 0
-    _ = String(x).map {
-        hap += Int(String($0))!
+//func solution(_ x:Int) -> Bool {
+//    var hap = 0
+//    _ = String(x).map {
+//        hap += Int(String($0))!
+//    }
+//
+//    return x % hap == 0 ? true : false
+//}
+
+//문자열을 정수로 바꾸기
+func solution(_ s:String) -> Int {
+    return Int(s)!
+}
+
+//x만큼 간격이 있는 n개의 숫자
+func solution(_ x:Int, _ n:Int) -> [Int64] {
+    var num = Int64(x)
+    var arr: [Int64] = []
+    
+    for _ in 0 ..< n {
+        arr.append(num)
+        num += Int64(x)
     }
     
-    return x % hap == 0 ? true : false
+    return arr
 }
 
 let a = Int(readLine()!)!
-print(solution(Int(a)))
+//print(solution(Int(a)))
 
