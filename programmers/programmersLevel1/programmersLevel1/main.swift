@@ -135,23 +135,89 @@ import Foundation
 //}
 
 //문자열을 정수로 바꾸기
-func solution(_ s:String) -> Int {
-    return Int(s)!
-}
+//func solution(_ s:String) -> Int {
+//    return Int(s)!
+//}
 
 //x만큼 간격이 있는 n개의 숫자
-func solution(_ x:Int, _ n:Int) -> [Int64] {
-    var num = Int64(x)
-    var arr: [Int64] = []
-    
-    for _ in 0 ..< n {
-        arr.append(num)
-        num += Int64(x)
-    }
-    
-    return arr
-}
+//func solution(_ x:Int, _ n:Int) -> [Int64] {
+//    var num = Int64(x)
+//    var arr: [Int64] = []
+//
+//    for _ in 0 ..< n {
+//        arr.append(num)
+//        num += Int64(x)
+//    }
+//
+//    return arr
+//}
 
-let a = Int(readLine()!)!
-//print(solution(Int(a)))
+//콜라츠 추측
+//func solution(_ num:Int) -> Int {
+//    var cnt = 0
+//    var n = num
+//
+//    if num == 1 {
+//        return 0
+//    }
+//
+////    while n != 1 {
+////        if cnt > 500 {
+////            return -1
+////        }
+////
+////        if n % 2 == 0 {
+////            n = n / 2
+////        }
+////        else {
+////            n = n * 3 + 1
+////        }
+////        cnt += 1
+////    }
+////
+////    return cnt
+//    while n != 1 && cnt <= 500 {
+//        if n % 2 == 0 {
+//            n = n / 2
+//        }
+//        else {
+//            n = n * 3 + 1
+//        }
+//        cnt += 1
+//    }
+//
+//    return n == 1 ? cnt : -1
+//}
+
+//두 정수 사이의 합
+//func solution(_ a:Int, _ b:Int) -> Int64 {
+////    return Int64(Array(a > b ? b...a : a...b).reduce(0, +))
+//
+//    var sum = 0
+//    if a < b {
+//        for i in a ... b {
+//            sum += i
+//        }
+//    } else if a > b {
+//        for i in b ... a {
+//            sum += i
+//        }
+//    }
+//    else {
+//        return Int64(a)
+//    }
+//    return Int64(sum)
+//}
+
+//서울에서 김서방 찾기
+func solution(_ seoul:[String]) -> String {
+    return "김서방은 \(seoul.firstIndex(of: "Kim")!)에 있다"
+//    for i in 0 ..< seoul.count {
+//        if seoul[i] == "Kim" {
+//            return "김서방은 \(i)에 있다"
+//        }
+//    }
+//    return ""
+}
+print(solution(["Jane", "Kim"]))
 
