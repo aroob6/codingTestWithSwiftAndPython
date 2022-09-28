@@ -210,14 +210,25 @@ import Foundation
 //}
 
 //서울에서 김서방 찾기
-func solution(_ seoul:[String]) -> String {
-    return "김서방은 \(seoul.firstIndex(of: "Kim")!)에 있다"
-//    for i in 0 ..< seoul.count {
-//        if seoul[i] == "Kim" {
-//            return "김서방은 \(i)에 있다"
-//        }
-//    }
-//    return ""
+//func solution(_ seoul:[String]) -> String {
+//    return "김서방은 \(seoul.firstIndex(of: "Kim")!)에 있다"
+////    for i in 0 ..< seoul.count {
+////        if seoul[i] == "Kim" {
+////            return "김서방은 \(i)에 있다"
+////        }
+////    }
+////    return ""
+//}
+//print(solution(["Jane", "Kim"]))
+
+//핸드폰 번호 가리기
+func solution(_ phone_number:String) -> String {
+    var res = ""
+    for _ in 0 ..< phone_number.count - 4 {
+        res += "*"
+    }
+    res += phone_number.suffix(4)
+    
+    return res
 }
-print(solution(["Jane", "Kim"]))
 
