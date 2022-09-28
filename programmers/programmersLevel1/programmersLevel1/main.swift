@@ -222,13 +222,41 @@ import Foundation
 //print(solution(["Jane", "Kim"]))
 
 //핸드폰 번호 가리기
-func solution(_ phone_number:String) -> String {
-    var res = ""
-    for _ in 0 ..< phone_number.count - 4 {
-        res += "*"
-    }
-    res += phone_number.suffix(4)
-    
-    return res
-}
+//func solution(_ phone_number:String) -> String {
+////    return String("\(String(repeating: "*", count: phone_number.count - 4))\(phone_number.suffix(4))")
+//    var res = ""
+//    for _ in 0 ..< phone_number.count - 4 {
+//        res += "*"
+//    }
+//    res += phone_number.suffix(4)
+//
+//    return res
+//}
 
+//나누어 떨어지는 숫자 배열
+//func solution(_ arr:[Int], _ divisor:Int) -> [Int] {
+//    var res: [Int] = []
+//    _ = arr.map{
+//        if $0 % divisor == 0 {
+//            res.append($0)
+//        }
+//    }
+//    return res.isEmpty ? [-1] : res.sorted()
+//
+////    let array = arr.sorted().filter{ $0 % divisor == 0 }
+////       return  array == [] ? [-1] : array
+//}
+//
+//print(solution([3,2,6], 10))
+
+//제일 작은 수 제거하기
+func solution(_ arr:[Int]) -> [Int] {
+    var res = arr
+    let index = res.firstIndex(of: res.min()!)
+    res.remove(at: index!)
+    
+    return res.isEmpty ? [-1] : res
+    
+//    let min = arr.sorted(by: <)[0]
+//        return arr.count == 1 ? [-1] : arr.compactMap({ return $0 != min ? $0 : nil })
+}
