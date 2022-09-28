@@ -250,13 +250,41 @@ import Foundation
 //print(solution([3,2,6], 10))
 
 //제일 작은 수 제거하기
-func solution(_ arr:[Int]) -> [Int] {
-    var res = arr
-    let index = res.firstIndex(of: res.min()!)
-    res.remove(at: index!)
+//func solution(_ arr:[Int]) -> [Int] {
+//    var res = arr
+//    let index = res.firstIndex(of: res.min()!)
+//    res.remove(at: index!)
+//
+//    return res.isEmpty ? [-1] : res
+//
+////    let min = arr.sorted(by: <)[0]
+////        return arr.count == 1 ? [-1] : arr.compactMap({ return $0 != min ? $0 : nil })
+//}
+
+//음양 더하기
+//func solution(_ absolutes:[Int], _ signs:[Bool]) -> Int {
+//    var res = 0
+//    for i in 0 ..< signs.count {
+//        res += signs[i] ? absolutes[i] : -absolutes[i]
+////        if signs[i] { //양수
+////            res += absolutes[i]
+////        } else {
+////            res -= absolutes[i]
+////        }
+//    }
+//    return res
+//}
+//
+//print(solution([1, 7, 12], [true, false, false]))
+
+//수박수박수박수박수박수?
+func solution(_ n:Int) -> String {
+    var res = ""
+    for i in 0 ..< n {
+        res += i % 2 == 0 ? "수" : "박"
+    }
+    return res
     
-    return res.isEmpty ? [-1] : res
-    
-//    let min = arr.sorted(by: <)[0]
-//        return arr.count == 1 ? [-1] : arr.compactMap({ return $0 != min ? $0 : nil })
+//    return "\(String(repeating: "수박", count: n / 2))\(n % 2 == 0 ? "" : "수")"
+//    return (0..<n).map{($0%2==0 ? "수":"박")}.reduce("", +)
 }
