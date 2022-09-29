@@ -278,13 +278,26 @@ import Foundation
 //print(solution([1, 7, 12], [true, false, false]))
 
 //수박수박수박수박수박수?
-func solution(_ n:Int) -> String {
-    var res = ""
-    for i in 0 ..< n {
-        res += i % 2 == 0 ? "수" : "박"
-    }
-    return res
-    
-//    return "\(String(repeating: "수박", count: n / 2))\(n % 2 == 0 ? "" : "수")"
-//    return (0..<n).map{($0%2==0 ? "수":"박")}.reduce("", +)
-}
+//func solution(_ n:Int) -> String {
+//    var res = ""
+//    for i in 0 ..< n {
+//        res += i % 2 == 0 ? "수" : "박"
+//    }
+//    return res
+//
+////    return "\(String(repeating: "수박", count: n / 2))\(n % 2 == 0 ? "" : "수")"
+////    return (0..<n).map{($0%2==0 ? "수":"박")}.reduce("", +)
+//}
+
+//가운데 글자 가져오기
+//func solution(_ s:String) -> String {
+////    return String(s[String.Index(encodedOffset: (s.count-1)/2)...String.Index(encodedOffset: s.count/2)])
+//    if s.count % 2 == 0 { //짝수
+//        return "\(s[s.index(s.startIndex, offsetBy: s.count/2 - 1)])\(s[s.index(s.startIndex, offsetBy: s.count / 2)])"
+//    }
+//    else {
+//        return "\(s[s.index(s.startIndex, offsetBy: s.count / 2)])"
+//    }
+//}
+//
+//print(solution("1234"))\
