@@ -301,3 +301,27 @@ import Foundation
 //}
 //
 //print(solution("1234"))\
+
+//없는 숫자 더하기
+//func solution(_ numbers:[Int]) -> Int {
+////    return (0...9).filter { !numbers.contains($0) }.reduce(0, +)
+//    var res = 0
+//    for i in 0 ..< 10 {
+//        if !numbers.contains(i)  {
+//            res += i
+//        }
+//    }
+//    return res
+//}
+
+//내적
+//func solution(_ a:[Int], _ b:[Int]) -> Int {
+////    return zip(a, b).map(*).reduce(0, +)
+//    var res = 0
+//    
+//    for i in 0 ..< a.count {
+//        res += (a[i] * b[i])
+//    }
+//    return res
+//}
+
