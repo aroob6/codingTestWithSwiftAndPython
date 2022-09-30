@@ -325,3 +325,25 @@ import Foundation
 //    return res
 //}
 
+//문자열 내림차순으로 배치하기
+//func solution(_ s:String) -> String {
+////    return String(s.sorted { $0 > $1 })
+//    var res = s.map{$0}
+//    return String(res.sorted(by: >))
+//}
+//
+//print(solution("Zbcdefg"))
+
+//문자열 다루기 기본
+func solution(_ s:String) -> Bool {
+//    return (Int(s) != nil && (s.count == 4 || s.count == 6)) ? true : false
+    if s.count == 4 || s.count == 6 {
+        guard let _ = Int(s) else {
+            return false
+        }
+    }
+    else {
+        return false
+    }
+    return true
+}
