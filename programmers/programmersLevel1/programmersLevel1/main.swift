@@ -349,21 +349,62 @@ import Foundation
 //}
 
 //약수의 개수와 덧셈
-func solution(_ left:Int, _ right:Int) -> Int {
-    //    return (left...right).map { i in (1...i).filter { i % $0 == 0 }.count % 2 == 0 ? i : -i }.reduce(0, +)
-    var res = 0
-    for i in left ... right {
-        var cnt = 0
-        for j in 1 ... i {
-            if i % j == 0 {
-                cnt += 1
-            }
-        }
-        
-        res = cnt % 2 == 0 ? res + i : res - i
-    }
-    
-    return res
-}
+//func solution(_ left:Int, _ right:Int) -> Int {
+//    //    return (left...right).map { i in (1...i).filter { i % $0 == 0 }.count % 2 == 0 ? i : -i }.reduce(0, +)
+//    var res = 0
+//    for i in left ... right {
+//        var cnt = 0
+//        for j in 1 ... i {
+//            if i % j == 0 {
+//                cnt += 1
+//            }
+//        }
+//
+//        res = cnt % 2 == 0 ? res + i : res - i
+//    }
+//
+//    return res
+//}
 
-print(solution(13, 17))
+//행렬의 덧셈
+//func solution(_ arr1:[[Int]], _ arr2:[[Int]]) -> [[Int]] {
+////    return zip(arr1, arr2).map{zip($0,$1).map{$0+$1}}
+//    var sum:[[Int]] = []
+//    for i in 0 ..< arr1.count {
+//        sum.append([])
+//        for j in 0 ..< arr1[i].count {
+//            sum[i].append(arr1[i][j] + arr2[i][j])
+//        }
+//    }
+//    return sum
+//}
+//print(solution([[1,2],[2,3]], [[3,4],[5,6]]))
+
+//부족한 금액 계산하기
+//func solution(_ price:Int, _ money:Int, _ count:Int) -> Int64{
+//    var answer:Int64 = -1
+//    var sum = 0
+//
+//    for i in 1 ... count { sum += price * i }
+//
+//    answer = Int64(money) - Int64(sum)
+//
+//    return answer > 0 ? 0 : -answer
+//}
+//
+//print(solution(3, 20, 4))
+
+//직사각형 별찍기
+let n = readLine()!.components(separatedBy: [" "]).map { Int($0)! }
+let (a, b) = (n[0], n[1])
+
+//for _ in 0..<b {
+//    print(Array(repeating: "*", count: a).joined())
+//}
+
+for _ in 0 ..< b {
+    for _ in 0 ..< a {
+        print("*", terminator: "")
+    }
+    print("")
+}
