@@ -395,16 +395,65 @@ import Foundation
 //print(solution(3, 20, 4))
 
 //직사각형 별찍기
-let n = readLine()!.components(separatedBy: [" "]).map { Int($0)! }
-let (a, b) = (n[0], n[1])
-
-//for _ in 0..<b {
-//    print(Array(repeating: "*", count: a).joined())
+//let n = readLine()!.components(separatedBy: [" "]).map { Int($0)! }
+//let (a, b) = (n[0], n[1])
+//
+////for _ in 0..<b {
+////    print(Array(repeating: "*", count: a).joined())
+////}
+//
+//for _ in 0 ..< b {
+//    for _ in 0 ..< a {
+//        print("*", terminator: "")
+//    }
+//    print("")
 //}
 
-for _ in 0 ..< b {
-    for _ in 0 ..< a {
-        print("*", terminator: "")
-    }
-    print("")
-}
+//최대공약수와 최소공배수 - 검색해서 찾아봄
+//func gcd(_ a: Int, _ b: Int) -> Int {
+//    return b == 0 ? a : gcd(b, a%b)
+//}
+//
+//func solution(_ n:Int, _ m:Int) -> [Int] {
+//    let numA = gcd(n, m)
+//    let numB = n * m / numA
+//
+//    return [numA, numB]
+//}
+//func solution(_ n:Int, _ m:Int) -> [Int] {
+//    var numA = 0
+//    for index in 1...n {
+//        if n % index == 0  && m % index == 0 {
+//            numA = index
+//        }
+//    }
+//    return [numA ,(n * m)/numA ]
+//}
+//print(solution(3, 12))
+
+//이상한 문자 만들기
+//func solution(_ s:String) -> String {
+////    let a = s.components(separatedBy: " ").map { $0.enumerated().map { $0.offset % 2 == 0 ? $0.element.uppercased() : $0.element.lowercased() } }
+////       return a.map{ $0.map { $0 }.joined() }.joined(separator: " ")
+//    var res = ""
+//    var cnt = 0
+//
+//    for i in s {
+//        if cnt % 2 == 0 {
+//            res += i.uppercased()
+//        }
+//        else {
+//            res += i.lowercased()
+//        }
+//        cnt += 1
+//
+//        if i == " " {
+//            cnt = 0
+//        }
+//    }
+//
+//    return res
+//}
+//print(solution("try hello world"))
+
+
