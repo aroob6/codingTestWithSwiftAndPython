@@ -463,30 +463,63 @@ import Foundation
 //print(solution(125))
 
 //예산
-func solution(_ d:[Int], _ budget:Int) -> Int {
-//    var budget = budget
+//func solution(_ d:[Int], _ budget:Int) -> Int {
+////    var budget = budget
+////
+////    return d.sorted().filter{
+////        budget = budget - $0
+////        return budget >= 0
+////    }.count
 //
-//    return d.sorted().filter{
-//        budget = budget - $0
-//        return budget >= 0
-//    }.count
-    
-    var cnt = 0
-    var sum = 0
-    
-    for i in d.sorted() {
-        sum += i
-        
-        if sum == budget {
-            cnt += 1
+//    var cnt = 0
+//    var sum = 0
+//
+//    for i in d.sorted() {
+//        sum += i
+//
+//        if sum == budget {
+//            cnt += 1
+//            break
+//        }
+//        else if sum > budget { break }
+//        else { cnt += 1 }
+//    }
+//
+//    return cnt
+//}
+//
+//print(solution([1,3,2,5,4], 9))
+//print(solution([2,2,3,3], 10))
+
+//시저 암호
+func solution(_ s:String, _ n:Int) -> String {
+//    return s.map {
+//        var code = Int($0.asciiValue!)
+//        switch code {
+//        case 65...90:
+//            code = (code + n - 65) % 26 + 65
+//        case 97...122:
+//            code = (code + n - 97) % 26 + 97
+//        default:
+//            break
+//        }
+//        return String(UnicodeScalar(UInt8(code)))
+//    }.joined()
+    return s.map {
+        var code = Int($0.asciiValue!)
+        switch code {
+        case 65 ... 90:
+            code = (code + n) % 26 + 52
+        case 97 ... 122:
+            code = (code + n) % 26 + 78
+        default:
             break
         }
-        else if sum > budget { break }
-        else { cnt += 1 }
-    }
-    
-    return cnt
+        return String(UnicodeScalar(UInt8(code)))
+    }.joined()
 }
 
-print(solution([1,3,2,5,4], 9))
-print(solution([2,2,3,3], 10))
+print(solution("AB", 1))
+print(solution("z", 1))
+print(solution("a B z", 4))
+
