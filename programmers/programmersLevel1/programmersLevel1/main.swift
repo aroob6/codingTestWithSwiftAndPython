@@ -492,34 +492,68 @@ import Foundation
 //print(solution([2,2,3,3], 10))
 
 //시저 암호
-func solution(_ s:String, _ n:Int) -> String {
+//func solution(_ s:String, _ n:Int) -> String {
+////    return s.map {
+////        var code = Int($0.asciiValue!)
+////        switch code {
+////        case 65...90:
+////            code = (code + n - 65) % 26 + 65
+////        case 97...122:
+////            code = (code + n - 97) % 26 + 97
+////        default:
+////            break
+////        }
+////        return String(UnicodeScalar(UInt8(code)))
+////    }.joined()
 //    return s.map {
 //        var code = Int($0.asciiValue!)
 //        switch code {
-//        case 65...90:
-//            code = (code + n - 65) % 26 + 65
-//        case 97...122:
-//            code = (code + n - 97) % 26 + 97
+//        case 65 ... 90:
+//            code = (code + n) % 26 + 52
+//        case 97 ... 122:
+//            code = (code + n) % 26 + 78
 //        default:
 //            break
 //        }
 //        return String(UnicodeScalar(UInt8(code)))
 //    }.joined()
-    return s.map {
-        var code = Int($0.asciiValue!)
-        switch code {
-        case 65 ... 90:
-            code = (code + n) % 26 + 52
-        case 97 ... 122:
-            code = (code + n) % 26 + 78
-        default:
-            break
+//}
+//
+//print(solution("AB", 1))
+//print(solution("z", 1))
+//print(solution("a B z", 4))
+
+//[1차] 비밀지도
+func solution(_ n:Int, _ arr1:[Int], _ arr2:[Int]) -> [String] {
+//    return (0..<n).map { String(String(arr1[$0]|arr2[$0]|2<<(n - 1), radix: 2).map { $0 == "1" ? "#" : " " }[1...n]) }
+    var answer: [String] = []
+    
+    for i in 0 ..< n {
+        let arr1Num = arr1[i]
+        let arr2Num = arr2[i]
+        var res = String(arr1Num | arr2Num, radix: 2)
+        var resString = ""
+        
+        if n != res.count {
+            for _ in 0 ..< (n-res.count) {
+                res.insert("0", at: res.startIndex)
+            }
         }
-        return String(UnicodeScalar(UInt8(code)))
-    }.joined()
+        
+        for i in res {
+            if i == "0" {
+                resString += " "
+            }
+            else {
+                resString += "#"
+            }
+        }
+        
+        answer.append(resString)
+    }
+    
+    return answer
 }
 
-print(solution("AB", 1))
-print(solution("z", 1))
-print(solution("a B z", 4))
-
+//print(solution(5, [9, 20, 28, 18, 11], [30, 1, 21, 17, 28]))
+print(solution(6, [46, 33, 33 ,22, 31, 50], [27 ,56, 19, 14, 14, 10]))
