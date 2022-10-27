@@ -582,20 +582,37 @@ import Foundation
 //print(solution([[60, 50], [30, 70], [60, 30], [80, 40]]))
 
 //문자열 내 마음대로 정렬하기
-func solution(_ strings:[String], _ n:Int) -> [String] {
-//    return strings.sorted{  Array($0)[n] == Array($1)[n] ? $0 < $1 :  Array($0)[n] < Array($1)[n] }
-    let index = strings[0].index(strings[0].startIndex, offsetBy: n)
-    
-    let res = strings.sorted { s1, s2 in
-        if s1[index] == s2[index] {
-            return s1 < s2
-        }
-        else {
-            return s1[index] < s2[index]
-        }
+//func solution(_ strings:[String], _ n:Int) -> [String] {
+////    return strings.sorted{  Array($0)[n] == Array($1)[n] ? $0 < $1 :  Array($0)[n] < Array($1)[n] }
+//    let index = strings[0].index(strings[0].startIndex, offsetBy: n)
+//
+//    let res = strings.sorted { s1, s2 in
+//        if s1[index] == s2[index] {
+//            return s1 < s2
+//        }
+//        else {
+//            return s1[index] < s2[index]
+//        }
+//    }
+//    return res
+//}
+//
+//print(solution(["sun", "bed", "car"], 1))
+//print(solution(["abce", "abcd", "cdx"], 2))
+
+//K번째 수 
+func solution(_ array:[Int], _ commands:[[Int]]) -> [Int] {
+//    return commands.map{ (key) in
+//        return array[(key[0]-1)...(key[1]-1)].sorted()[key[2]-1]
+//    }
+    return commands.map { arr in
+        let i = arr[0] - 1
+        let j = arr[1] - 1
+        let k = arr[2] - 1
+        let slice = array[i...j].sorted()
+
+        return slice[k]
     }
-    return res
 }
 
-print(solution(["sun", "bed", "car"], 1))
-print(solution(["abce", "abcd", "cdx"], 2))
+print(solution([1, 5, 2, 6, 3, 7, 4], [[2, 5, 3], [4, 4, 1], [1, 7, 3]]))
