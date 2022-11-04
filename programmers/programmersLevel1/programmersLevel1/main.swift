@@ -690,16 +690,33 @@ import Foundation
 //print(solution("123"))
 
 // 두 개 뽑아서 더하기
-func solution(_ numbers:[Int]) -> [Int] {
-   var set = Set<Int>()
-    
-    for i in 0 ..< numbers.count - 1 {
-        for j in i + 1 ..< numbers.count {
-            set.insert(numbers[i] + numbers[j])
+//func solution(_ numbers:[Int]) -> [Int] {
+//   var set = Set<Int>()
+//
+//    for i in 0 ..< numbers.count - 1 {
+//        for j in i + 1 ..< numbers.count {
+//            set.insert(numbers[i] + numbers[j])
+//        }
+//    }
+//
+//    return set.sorted()
+//}
+//
+//print(solution([2,1,3,4,1]))
+
+//삼총사
+//이 전 문제랑 비슷
+func solution(_ number:[Int]) -> Int {
+    var count = 0
+
+    for i in 0 ..< number.count {
+        for j in i+1 ..< number.count {
+            for k in j+1 ..< number.count {
+                if number[i] + number[j] + number[k] == 0 {
+                    count += 1
+                }
+            }
         }
     }
-    
-    return set.sorted()
+    return count
 }
-
-print(solution([2,1,3,4,1]))
