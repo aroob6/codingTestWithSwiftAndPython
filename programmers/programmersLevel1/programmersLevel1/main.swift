@@ -722,37 +722,78 @@ import Foundation
 //}
 
 //2016년
-func solution(_ a:Int, _ b:Int) -> String {
-//    let w = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"]
-//        let monthDay = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-//        let totalDay = monthDay[0..<a-1].reduce(0, +) + b
+//func solution(_ a:Int, _ b:Int) -> String {
+////    let w = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"]
+////        let monthDay = [ 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+////        let totalDay = monthDay[0..<a-1].reduce(0, +) + b
+////
+////        return w[totalDay % 7]
 //
-//        return w[totalDay % 7]
-    
-    var day = 0
-    
-    for i in 1 ..< a {
-        switch i {
-        case 1, 3, 5, 7, 8, 10, 12: day += 31
-        case 2: day += 29
-        case 4, 6, 9, 11: day += 30
-        default: break
-        }
+//    var day = 0
+//
+//    for i in 1 ..< a {
+//        switch i {
+//        case 1, 3, 5, 7, 8, 10, 12: day += 31
+//        case 2: day += 29
+//        case 4, 6, 9, 11: day += 30
+//        default: break
+//        }
+//    }
+//
+//    day += b
+//
+//    var res = ""
+//    switch day % 7 {
+//        case 0: res = "THU"
+//        case 1: res = "FRI"
+//        case 2: res = "SAT"
+//        case 3: res = "SUN"
+//        case 4: res = "MON"
+//        case 5: res = "TUE"
+//        case 6: res = "WED"
+//        default: break
+//    }
+//
+//    return res
+//}
+
+//모의고사
+func solution(_ answers:[Int]) -> [Int] {
+    let one = [1, 2, 3, 4, 5]
+    let two = [2, 1, 2, 3, 2, 4, 2, 5]
+    let three = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+    var i = 0
+    var res: [Int:Int] = [:]
+
+    _ = answers.map { ans in
+        res[1] = ans == one[i%one.count] ? (res[1] ?? 0) + 1 : (res[1] ?? 0) + 0
+        res[2] = ans == two[i%two.count] ? (res[2] ?? 0) + 1 : (res[2] ?? 0) + 0
+        res[3] = ans == three[i%three.count] ? (res[3] ?? 0) + 1 : (res[3] ?? 0) + 0
+
+        i += 1
     }
-    
-    day += b
-    
-    var res = ""
-    switch day % 7 {
-        case 0: res = "THU"
-        case 1: res = "FRI"
-        case 2: res = "SAT"
-        case 3: res = "SUN"
-        case 4: res = "MON"
-        case 5: res = "TUE"
-        case 6: res = "WED"
-        default: break
-    }
-    
-    return res
+
+    let max = res.values.max()
+    print(res.filter{$0.value == max})
+    return res.filter{$0.value == max}.keys.sorted()
 }
+
+//func solution(_ answers:[Int]) -> [Int] {
+//    let answer = (
+//        a: [1, 2, 3, 4, 5], // index % 5
+//        b: [2, 1, 2, 3, 2, 4, 2, 5], // index % 8
+//        c: [3, 3, 1, 1, 2, 2, 4, 4, 5, 5] // index % 10
+//    )
+//    var point = [1:0, 2:0, 3:0]
+//
+//    for (i, v) in answers.enumerated() {
+//        if v == answer.a[i % 5] { point[1] = point[1]! + 1 }
+//        if v == answer.b[i % 8] { point[2] = point[2]! + 1 }
+//        if v == answer.c[i % 10] { point[3] = point[3]! + 1 }
+//    }
+//
+//    return point.sorted{ $0.key < $1.key }.filter{ $0.value == point.values.max() }.map{ $0.key }
+//}
+
+print(solution([1,2,3,4,5]))
+print(solution([1,3,2,4,2]))
