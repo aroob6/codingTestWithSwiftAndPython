@@ -758,25 +758,25 @@ import Foundation
 //}
 
 //모의고사
-func solution(_ answers:[Int]) -> [Int] {
-    let one = [1, 2, 3, 4, 5]
-    let two = [2, 1, 2, 3, 2, 4, 2, 5]
-    let three = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-    var i = 0
-    var res: [Int:Int] = [:]
-
-    _ = answers.map { ans in
-        res[1] = ans == one[i%one.count] ? (res[1] ?? 0) + 1 : (res[1] ?? 0) + 0
-        res[2] = ans == two[i%two.count] ? (res[2] ?? 0) + 1 : (res[2] ?? 0) + 0
-        res[3] = ans == three[i%three.count] ? (res[3] ?? 0) + 1 : (res[3] ?? 0) + 0
-
-        i += 1
-    }
-
-    let max = res.values.max()
-    print(res.filter{$0.value == max})
-    return res.filter{$0.value == max}.keys.sorted()
-}
+//func solution(_ answers:[Int]) -> [Int] {
+//    let one = [1, 2, 3, 4, 5]
+//    let two = [2, 1, 2, 3, 2, 4, 2, 5]
+//    let three = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
+//    var i = 0
+//    var res: [Int:Int] = [:]
+//
+//    _ = answers.map { ans in
+//        res[1] = ans == one[i%one.count] ? (res[1] ?? 0) + 1 : (res[1] ?? 0) + 0
+//        res[2] = ans == two[i%two.count] ? (res[2] ?? 0) + 1 : (res[2] ?? 0) + 0
+//        res[3] = ans == three[i%three.count] ? (res[3] ?? 0) + 1 : (res[3] ?? 0) + 0
+//
+//        i += 1
+//    }
+//
+//    let max = res.values.max()
+//    print(res.filter{$0.value == max})
+//    return res.filter{$0.value == max}.keys.sorted()
+//}
 
 //func solution(_ answers:[Int]) -> [Int] {
 //    let answer = (
@@ -795,5 +795,46 @@ func solution(_ answers:[Int]) -> [Int] {
 //    return point.sorted{ $0.key < $1.key }.filter{ $0.value == point.values.max() }.map{ $0.key }
 //}
 
-print(solution([1,2,3,4,5]))
-print(solution([1,3,2,4,2]))
+//print(solution([1,2,3,4,5]))
+//print(solution([1,3,2,4,2]))
+
+//소수 찾기
+func isPrime(_ n: Int) -> Bool {
+    var i = 3
+    if n < 4 {
+        return n == 1 ? false :  true
+    }
+    if n % 2 == 0 {
+        return false
+    }
+    
+    while (i*i) <= n {
+        if n % i == 0 {
+            return false
+        }
+        i += 2
+    }
+    return true
+}
+
+func solution(_ n:Int) -> Int {
+    //    var cnt = 0
+    //    for i in 1 ... n {
+    //        if isPrime(i) {
+    //            cnt += 1
+    //        }
+    //    }
+    
+    //효율성 테스트로 추가
+    var cnt = 1
+    
+    for i in 1 ... n where i % 2 != 0 {
+        if isPrime(i) {
+            cnt += 1
+        }
+        
+    }
+    return cnt
+}
+
+print(solution(5))
