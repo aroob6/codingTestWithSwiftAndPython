@@ -799,10 +799,46 @@ import Foundation
 //print(solution([1,3,2,4,2]))
 
 //소수 찾기
+//func isPrime(_ n: Int) -> Bool {
+//    var i = 3
+//    if n < 4 {
+//        return n == 1 ? false :  true
+//    }
+//    if n % 2 == 0 {
+//        return false
+//    }
+//
+//    while (i*i) <= n {
+//        if n % i == 0 {
+//            return false
+//        }
+//        i += 2
+//    }
+//    return true
+//}
+//
+//func solution(_ n:Int) -> Int {
+//    //    var cnt = 0
+//    //    for i in 1 ... n {
+//    //        if isPrime(i) {
+//    //            cnt += 1
+//    //        }
+//    //    }
+//
+//    //효율성 테스트로 추가
+//    var cnt = 1
+//
+//    for i in 1 ... n where i % 2 != 0 && isPrime(i) {
+//        cnt += 1
+//    }
+//    return cnt
+//}
+
+//소수 만들기
 func isPrime(_ n: Int) -> Bool {
     var i = 3
     if n < 4 {
-        return n == 1 ? false :  true
+        return n == 1 ? false : true
     }
     if n % 2 == 0 {
         return false
@@ -814,27 +850,21 @@ func isPrime(_ n: Int) -> Bool {
         }
         i += 2
     }
+    
     return true
 }
-
-func solution(_ n:Int) -> Int {
-    //    var cnt = 0
-    //    for i in 1 ... n {
-    //        if isPrime(i) {
-    //            cnt += 1
-    //        }
-    //    }
+func solution(_ nums:[Int]) -> Int {
+    var answer = 0
     
-    //효율성 테스트로 추가
-    var cnt = 1
-    
-    for i in 1 ... n where i % 2 != 0 {
-        if isPrime(i) {
-            cnt += 1
+    for i in 0 ..< nums.count {
+        for j in (i+1) ..< nums.count {
+            for k in (j+1) ..< nums.count {
+                if isPrime(nums[i]+nums[j]+nums[k]) {
+                    answer += 1
+                }
+            }
         }
-        
     }
-    return cnt
-}
 
-print(solution(5))
+    return answer
+}
