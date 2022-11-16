@@ -835,36 +835,64 @@ import Foundation
 //}
 
 //소수 만들기
-func isPrime(_ n: Int) -> Bool {
-    var i = 3
-    if n < 4 {
-        return n == 1 ? false : true
-    }
-    if n % 2 == 0 {
-        return false
-    }
-    
-    while (i*i) <= n {
-        if n % i == 0 {
-            return false
-        }
-        i += 2
-    }
-    
-    return true
-}
-func solution(_ nums:[Int]) -> Int {
-    var answer = 0
-    
-    for i in 0 ..< nums.count {
-        for j in (i+1) ..< nums.count {
-            for k in (j+1) ..< nums.count {
-                if isPrime(nums[i]+nums[j]+nums[k]) {
-                    answer += 1
-                }
-            }
-        }
-    }
+//func isPrime(_ n: Int) -> Bool {
+//    var i = 3
+//    if n < 4 {
+//        return n == 1 ? false : true
+//    }
+//    if n % 2 == 0 {
+//        return false
+//    }
+//
+//    while (i*i) <= n {
+//        if n % i == 0 {
+//            return false
+//        }
+//        i += 2
+//    }
+//
+//    return true
+//}
+//func solution(_ nums:[Int]) -> Int {
+//    var answer = 0
+//
+//    for i in 0 ..< nums.count {
+//        for j in (i+1) ..< nums.count {
+//            for k in (j+1) ..< nums.count {
+//                if isPrime(nums[i]+nums[j]+nums[k]) {
+//                    answer += 1
+//                }
+//            }
+//        }
+//    }
+//
+//    return answer
+//}
 
-    return answer
+//실패율
+func solution(_ N:Int, _ stages:[Int]) -> [Int] {
+//    var clearPeople: Double = Double(stages.count)
+//    var cnt: Double = 0
+    var fail: [Int:Double] = [:]
+//    for i in 1 ... N {
+//        for j in 0 ..< stages.count {
+//            if i == stages[j] {
+//                cnt += 1
+//            }
+//        }
+//
+//        fail[i] = cnt/clearPeople
+//        clearPeople -= cnt
+//        cnt = 0
+//    }
+    
+    for i in 1 ... N {
+        let clearPeople = stages.filter{$0 >= i}.count
+        let clearCnt = clearPeople - stages.filter{$0 > i}.count
+        fail[i] = Double(clearCnt)/Double(clearPeople)
+    }
+    
+    return fail.sorted(by: <).sorted(by: {$0.value > $1.value}).map{$0.key}
 }
+
+print(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]))
