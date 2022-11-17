@@ -898,58 +898,72 @@ import Foundation
 //print(solution(5, [2, 1, 2, 6, 2, 4, 3, 3]))
 
 //[1차] 다트게임
-func solution(_ dartResult:String) -> Int {
-    let bouns: [Character: Double] = ["S": 1, "D": 2, "T": 3]
-        
-    var score:Double = 0.0
-    var res: [Double] = []
-    
-    for chr in dartResult {
-        var str = String(chr)
-        
-        if chr.isNumber {
-            score = score * 10 + Double(str)!
-        }
-        else if chr.isLetter {
-            res.append(pow(score, bouns[chr]!))
-            score = 0
-        }
-        else {
-            if chr == "*" {
-                for index in [res.endIndex - 1, res.endIndex - 2] where index >= 0 {
-                    res[index] *= 2
-                }
-            }
-            if chr == "#" {
-                let target = res.removeLast()
-                res.append(target * -1)
-            }
-        }
-        print(res)
+//func solution(_ dartResult:String) -> Int {
+//    let bouns: [Character: Double] = ["S": 1, "D": 2, "T": 3]
+//
+//    var score:Double = 0.0
+//    var res: [Double] = []
+//
+//    for chr in dartResult {
+//        var str = String(chr)
+//
+//        if chr.isNumber {
+//            score = score * 10 + Double(str)!
+//        }
+//        else if chr.isLetter {
+//            res.append(pow(score, bouns[chr]!))
+//            score = 0
+//        }
 //        else {
-//            switch str {
-//            case "S":
-//                res.append(score)
-//                score = 0
-//            case "D":
-//                res.append(score*score)
-//                score = 0
-//            case "T":
-//                res.append(score*score*score)
-//                score = 0
-//            case "*":
-//                for i in res.count - 1 ... res.count {
-//                    res[i-1] *= 2
+//            if chr == "*" {
+//                for index in [res.endIndex - 1, res.endIndex - 2] where index >= 0 {
+//                    res[index] *= 2
 //                }
-//            case "#":
-//                res[res.count - 1] = res.last ?? 0 * (-1)
-//            default:
-//                print("")
+//            }
+//            if chr == "#" {
+//                let target = res.removeLast()
+//                res.append(target * -1)
 //            }
 //        }
-        
-    }
-    return Int(res.reduce(0, +))
-}
+//        print(res)
+////        else {
+////            switch str {
+////            case "S":
+////                res.append(score)
+////                score = 0
+////            case "D":
+////                res.append(score*score)
+////                score = 0
+////            case "T":
+////                res.append(score*score*score)
+////                score = 0
+////            case "*":
+////                for i in res.count - 1 ... res.count {
+////                    res[i-1] *= 2
+////                }
+////            case "#":
+////                res[res.count - 1] = res.last ?? 0 * (-1)
+////            default:
+////                print("")
+////            }
+////        }
+//
+//    }
+//    return Int(res.reduce(0, +))
+//}
+//
+//print(solution("1D2S#10S"))
 
-print(solution("1D2S#10S"))
+//콜라문제
+func solution(_ a:Int, _ b:Int, _ n:Int) -> Int {
+//    return (n > b ? n - b : 0) / (a - b) * b
+    var myCoke = n // 보유 콜라
+    var getCoke = 0 //교환을 통해 받은 콜라
+    
+    while myCoke >= a {
+        getCoke += myCoke / a * b
+        myCoke = (myCoke / a * b) + (myCoke % a)
+    }
+    
+    return getCoke
+}
