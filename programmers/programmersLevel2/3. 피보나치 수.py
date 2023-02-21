@@ -8,6 +8,14 @@ def solution(n):
     else:
         return solution(n-1) + solution(n-2)
 '''
+'''
+def solution(num):
+    a, b = 0, 1
+    for i in range(num):
+        a, b = b, (a+b) % 1234567
+    return a
+'''
+
 def solution(n):
     a = [0,1]
     for i in range(2, n+1):
