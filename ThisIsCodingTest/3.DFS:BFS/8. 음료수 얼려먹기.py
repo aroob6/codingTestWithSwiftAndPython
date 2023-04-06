@@ -2,7 +2,6 @@ def solution(n,m,arr):
     # n: 세로, m: 가로
     answer = 0
     def dfs(x,y):
-        print(x,y,arr)
         if x <= -1 or x >= n or y <= -1 or y >=m:
             return False
 
