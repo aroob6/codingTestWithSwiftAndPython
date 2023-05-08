@@ -6,10 +6,11 @@ def solution(number, k):
             answer.pop()
             k -= 1
         answer.append(i)
+
     if k > 0:
         answer = answer[:-k]
 
-    return ''.join(answer)
+    return ''.join(answer[:len(answer) - k])
 
 print(solution("1924", 2)) #94
 print(solution("1231234", 3)) #3234
