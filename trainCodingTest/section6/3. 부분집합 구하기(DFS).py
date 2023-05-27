@@ -1,4 +1,3 @@
-from itertools import combinations 
 def solution(n):
     ch = [0] * (n+1)
     def DFS(x):
